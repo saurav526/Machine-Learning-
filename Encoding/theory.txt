@@ -1,0 +1,49 @@
+'''
+🔹 Code Explanation 
+
+from sklearn.preprocessing import LabelEncoder
+→ Imports LabelEncoder, used to convert categorical text data into numeric labels.
+
+import pandas as pd
+→ Imports Pandas for data handling and DataFrame operations.
+
+df = pd.DataFrame({...})
+→ Creates a Pandas DataFrame with two categorical columns:
+
+Color → Red, Blue, Green
+
+Size → S, M, L, XL
+
+df_label_encoded = df.copy()
+→ Creates a copy of the original DataFrame to preserve raw data.
+
+le = LabelEncoder()
+→ Initializes the LabelEncoder object.
+
+df_label_encoded['Color'] = le.fit_transform(df['Color'])
+→ Fits the encoder on the Color column and converts each category into a numeric label.
+
+df_label_encoded['Size'] = le.fit_transform(df['Size'])
+→ Fits the encoder on the Size column and converts each category into numeric labels.
+
+print(df_label_encoded)
+→ Displays the label-encoded DataFrame.
+
+print(df_label_encoded[['Color', 'Size']].dtypes)
+→ Prints the data types of encoded columns, confirming they are integers.
+
+🔹 Important Notes (Very Useful for Viva)
+
+LabelEncoder assigns numbers alphabetically:
+
+Color → Blue = 0, Green = 1, Red = 2
+
+Size → L = 0, M = 1, S = 2, XL = 3
+
+Label Encoding is best used when:
+
+Categories are ordinal OR
+
+Used in tree-based models (Decision Tree, Random Forest)
+
+For nominal data, One-Hot Encoding is often preferred.
