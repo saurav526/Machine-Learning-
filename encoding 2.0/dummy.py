@@ -1,0 +1,20 @@
+from sklearn.preprocessing import  LabelEncoder
+import pandas as pd
+
+df = pd.DataFrame({
+    'Color': ['Red', 'Blue', 'Green', 'Blue', 'Red'], 
+    'Size': ['S', 'M', 'L', 'XL', 'S']
+})  
+
+df_label_encoded = df.copy()
+
+le = LabelEncoder()
+df_label_encoded['Color'] = le.fit_transform(df['Color'])
+df_label_encoded['Size'] = le.fit_transform(df['Size'])     
+
+print(df_label_encoded)
+print(df_label_encoded[['Color', 'Size']].dtypes)
+
+df_label_encoded = pd.get_dummies(df, columns=[ "Size"])
+print("/nonreencoded DataFrame with One-Hot Encoding:")
+print(df_label_encoded)
