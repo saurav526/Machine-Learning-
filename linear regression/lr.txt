@@ -1,0 +1,66 @@
+🔹 Code Explanation (Linear Regression)
+from sklearn.linear_model import LinearRegression
+
+
+Imports LinearRegression class from sklearn to build a regression model.
+
+X = [[1], [2], [3], [4], [5], [6]]
+
+
+Represents input features (study hours).
+
+Each value is inside a list because sklearn expects 2D input.
+
+y = [40, 50, 60, 70, 80, 90]
+
+
+Represents output labels (scores).
+
+Each value corresponds to the score for the respective study hours.
+
+model = LinearRegression()
+
+
+Creates an instance of the Linear Regression model.
+
+model.fit(X, y)
+
+
+Trains the model using the given input-output data.
+
+Learns the best-fit line by calculating slope and intercept.
+
+hours = float(input("Enter number of study hours: "))
+
+
+Takes user input for number of study hours.
+
+Converted to float to allow decimal values.
+
+predicted_score = model.predict([[hours]])
+
+
+Predicts the score for the entered study hours.
+
+Input is wrapped inside a list to maintain 2D format.
+
+print(f"Predicted score for studying {hours} hours: {predicted_score[0]:.2f}")
+
+
+Displays the predicted score.
+
+:.2f limits output to 2 decimal places.
+
+print("Model Coefficient (slope):", model.coef_[0])
+
+
+Prints the slope (m) of the regression line.
+
+Indicates how much score increases per 1 hour of study.
+
+print("Model Intercept:", model.intercept_)
+
+
+Prints the intercept (c) of the regression line.
+
+Represents the score when study hours are zero.
