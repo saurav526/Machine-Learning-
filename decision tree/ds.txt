@@ -1,0 +1,17 @@
+Decision Tree Working Explanation
+
+In this project, a Decision Tree classifier is used to classify fruits as Apple (0) or Orange (1) based on two features:
+
+ weight and number of fruits. A decision tree works by selecting one feature at a time and splitting the data using threshold values 
+ 
+ (for example, weight ≤ 8 or number of fruits ≤ 4). These splits are learned purely from the training data and are applied 
+ repeatedly until the data is separated into final decision nodes (leaves). The model does not understand mathematical 
+ relationships like ratios or proportional scaling; instead, it makes decisions only based on whether an input value 
+ falls above or below the learned thresholds.
+
+When an input such as 21 kg weight and 6–7 fruits is given, 
+the model predicts Orange because this input lies far outside the range of values seen during training. 
+In the training dataset, the maximum weight is 11 kg, and higher weights combined with higher fruit counts are associated
+ with the Orange class. Since the decision tree cannot extrapolate or reason logically like a human, it treats very large 
+ values as “more extreme” versions of what it has already seen. As a result, the model classifies the input as Orange, 
+ not because of real-world logic, but because it matches the learned threshold-based patterns from the training data.
