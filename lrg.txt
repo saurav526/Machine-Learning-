@@ -1,0 +1,60 @@
+Logistic Regression is a classification algorithm used to predict binary outcomes like 0 or 1, Yes or No, True or False.
+
+🔹 Why it is called “Regression” but used for Classification?
+
+It calculates a probability value
+
+Then converts probability into class (0 or 1)
+
+🔹 Logistic Regression Formula
+𝑦
+=
+1
+1
++
+𝑒
+−
+(
+𝑤
+𝑥
++
+𝑏
+)
+y=
+1+e
+−(wx+b)
+1
+	​
+
+
+Where:
+
+w → coefficient (weight)
+
+x → input value
+
+b → intercept
+
+Output → probability between 0 and 1
+
+🔹 Decision Rule
+
+If probability ≥ 0.5 → Class 1
+
+If probability < 0.5 → Class 0
+
+3️⃣ How This Code Works Internally (Flow)
+
+1️⃣ Model takes input values X
+2️⃣ Applies linear equation wx + b
+3️⃣ Passes result through sigmoid function
+4️⃣ Converts probability into 0 or 1
+5️⃣ Outputs the predicted class
+
+📌 DATA TYPE USED
+
+X → Numerical data
+
+y → Categorical (binary) data
+
+Logistic Regression works on → Numerical input & categorical output
