@@ -1,0 +1,143 @@
+🔹 Step 1: Training data (already given)
+X = [
+ [80,5], [90,6], [75,6], [60,5],
+ [60,7], [40,5], [50,6], [85,6]
+]
+y = [0, 0, 1, 1, 1, 0, 0, 1]
+
+
+Each row =
+👉 [weight, height]
+👉 y = class (0 = Not Athlete, 1 = Athlete)
+
+🔹 Step 2: New input (query point)
+weight = 80
+height = 6
+
+
+This is the point to be classified.
+
+🔹 Step 3: How KNN calculates distance
+
+KNN uses Euclidean distance by default:
+
+𝑑
+𝑖
+𝑠
+𝑡
+𝑎
+𝑛
+𝑐
+𝑒
+=
+(
+𝑥
+1
+−
+𝑥
+2
+)
+2
++
+(
+𝑦
+1
+−
+𝑦
+2
+)
+2
+distance=
+(x
+1
+	​
+
+−x
+2
+	​
+
+)
+2
++(y
+1
+	​
+
+−y
+2
+	​
+
+)
+2
+	​
+
+Distance calculation example
+
+Input point = (80, 6)
+
+Training Point	Class	Distance
+(80,5)	0	√((80−80)² + (6−5)²) = 1.00
+(90,6)	0	√((80−90)² + (6−6)²) = 10.00
+(75,6)	1	√((80−75)² + 0²) = 5.00
+(60,5)	1	√(20² + 1²) ≈ 20.02
+(60,7)	1	√(20² + 1²) ≈ 20.02
+(40,5)	0	√(40² + 1²) ≈ 40.01
+(50,6)	0	√(30² + 0²) = 30.00
+(85,6)	1	√(5² + 0²) = 5.00
+🔹 Step 4: Sorting by distance
+
+KNN sorts all points from nearest → farthest
+
+Rank	Point	Distance	Class
+1	(80,5)	1.00	0
+2	(75,6)	5.00	1
+3	(85,6)	5.00	1
+4	(90,6)	10.00	0
+5	(60,5)	20.02	1
+6	(60,7)	20.02	1
+7	(50,6)	30.00	0
+8	(40,5)	40.01	0
+🔹 Step 5: Selecting K nearest neighbors
+
+Your code:
+
+n_neighbors = 6
+
+
+So KNN selects top 6 nearest points only:
+
+Selected	Class
+0	
+1	
+1	
+0	
+1	
+1	
+🔹 Step 6: How class is decided
+
+KNN does VOTING
+
+Class	Count
+0	2
+1	4
+
+👉 Majority = Class 1
+
+✅ Final Prediction
+Athlete (1)
+
+❗ Important Clarifications (Very Important)
+❌ KNN does NOT:
+
+choose class from smallest distance
+
+choose class from most repeated distance
+
+✅ KNN DOES:
+
+calculate distance
+
+select K nearest points
+
+count their classes
+
+choose the majority class
