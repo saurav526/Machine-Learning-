@@ -1,0 +1,54 @@
+Code
+from sklearn.datasets import load_iris
+
+
+👉 Imports Iris dataset.
+
+from sklearn.model_selection import train_test_split
+
+
+👉 Used to split data.
+
+from sklearn.ensemble import RandomForestClassifier
+
+
+👉 Imports Random Forest algorithm.
+
+from sklearn.metrics import accuracy_score
+
+
+👉 Used to calculate accuracy.
+
+data = load_iris()
+X = data.data
+y = data.target
+
+
+👉 Loads dataset and separates features (X) and labels (y).
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=1
+)
+
+
+👉 Splits data into training and testing sets.
+
+rf_model = RandomForestClassifier(n_estimators=100)
+
+
+👉 Creates a Random Forest model with 100 decision trees.
+
+rf_model.fit(X_train, y_train)
+
+
+👉 Trains the Random Forest model.
+
+y_pred = rf_model.predict(X_test)
+
+
+👉 Predicts output using trained model.
+
+print("Random Forest Accuracy:", accuracy_score(y_test, y_pred))
+
+
+👉 Prints accuracy of Random Forest model.
