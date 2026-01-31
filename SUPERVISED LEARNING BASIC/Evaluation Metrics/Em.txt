@@ -1,0 +1,69 @@
+Code
+from sklearn.datasets import load_iris
+
+
+👉 Imports Iris dataset.
+
+from sklearn.model_selection import train_test_split
+
+
+👉 Splits dataset.
+
+from sklearn.tree import DecisionTreeClassifier
+
+
+👉 Uses Decision Tree for demonstration.
+
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+
+👉 Imports evaluation metrics.
+
+data = load_iris()
+X = data.data
+y = data.target
+
+
+👉 Loads dataset and separates input and output.
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=1
+)
+
+
+👉 Splits data into training and testing.
+
+model = DecisionTreeClassifier()
+
+
+👉 Creates a Decision Tree model.
+
+model.fit(X_train, y_train)
+
+
+👉 Trains the model.
+
+y_pred = model.predict(X_test)
+
+
+👉 Predicts output for test data.
+
+print("Accuracy :", accuracy_score(y_test, y_pred))
+
+
+👉 Measures overall correctness.
+
+print("Precision:", precision_score(y_test, y_pred, average='weighted'))
+
+
+👉 Measures how many predicted positives are correct.
+
+print("Recall   :", recall_score(y_test, y_pred, average='weighted'))
+
+
+👉 Measures how many actual positives were found.
+
+print("F1 Score :", f1_score(y_test, y_pred, average='weighted'))
+
+
+👉 Calculates balance between precision and recall.
