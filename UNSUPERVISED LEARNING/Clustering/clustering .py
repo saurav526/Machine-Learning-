@@ -22,11 +22,11 @@ print("Shape of X:", X.shape)
 # -------------------------------
 # 2. Visualize generated data
 # -------------------------------
-# plt.scatter(X[:, 0], X[:, 1], c=y)
-# plt.title("Generated Data with 3 Clusters")
-# plt.xlabel("Feature 1")
-# plt.ylabel("Feature 2")
-# plt.show()
+plt.scatter(X[:, 0], X[:, 1], c=y)
+plt.title("Generated Data with 3 Clusters")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.show()
 
 # -------------------------------
 # 3. Train-test split
