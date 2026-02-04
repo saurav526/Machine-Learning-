@@ -1,0 +1,121 @@
+1. Importing required libraries
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.datasets import make_blobs
+from sklearn.cluster import DBSCAN
+from sklearn.metrics import silhouette_score
+
+
+matplotlib.pyplot → for plotting graphs
+
+numpy → numerical computations
+
+make_blobs → generates synthetic clustered data
+
+DBSCAN → density-based clustering algorithm
+
+silhouette_score → evaluates clustering quality
+
+2. Generating synthetic dataset
+X, y = make_blobs(
+    n_samples=1000,
+    centers=3,
+    n_features=2,
+    cluster_std=0.6,
+    random_state=23
+)
+
+
+Generates 1000 data points
+
+Creates 3 clusters
+
+Each point has 2 features
+
+cluster_std=0.6 → makes clusters compact
+
+X → feature values
+
+y → true labels (used only for visualization)
+
+3. Scatter plot of original data
+plt.scatter(X[:, 0], X[:, 1], c=y)
+plt.title("Generated Data")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.show()
+
+
+Displays the original dataset
+
+Colors represent actual clusters
+
+Helps visually understand data distribution
+
+4. Creating DBSCAN model
+dbscan = DBSCAN(
+    eps=0.5,
+    min_samples=5
+)
+
+
+eps → maximum distance between neighboring points
+
+min_samples → minimum points required to form a dense region
+
+DBSCAN does not require number of clusters in advance
+
+5. Applying DBSCAN clustering
+y_db = dbscan.fit_predict(X)
+
+
+Fits DBSCAN to the dataset
+
+Assigns cluster labels to data points
+
+Noise points are labeled as -1
+
+6. Finding number of clusters
+n_clusters = len(set(y_db)) - (1 if -1 in y_db else 0)
+print("Estimated number of clusters:", n_clusters)
+
+
+Counts unique cluster labels
+
+Excludes noise (-1)
+
+Automatically estimates number of clusters
+
+7. Calculating Silhouette Score (excluding noise)
+if n_clusters > 1:
+    score = silhouette_score(X[y_db != -1], y_db[y_db != -1])
+    print("Silhouette Score (DBSCAN):", score)
+else:
+    print("Silhouette Score not defined")
+
+
+Silhouette score is calculated only for valid clusters
+
+Noise points are removed
+
+Score range: -1 to +1
+
+Higher score → better clustering
+
+8. Visualizing DBSCAN clustering result
+plt.scatter(X[:, 0], X[:, 1], c=y_db, cmap='plasma')
+plt.title("DBSCAN Clustering Result (-1 = Noise)")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.show()
+
+
+Visualizes final clustering
+
+Different colors → different clusters
+
+Noise points (-1) appear as a separate color
+
+📌 Summary (README-ready)
+
+This program demonstrates DBSCAN (Density-Based Spatial Clustering of Applications with Noise) on a synthetic dataset. DBSCAN groups data based on density, automatically identifies the number of clusters, and detects noise points. The clustering performance is evaluated using the Silhouette Score, excluding noise points.
