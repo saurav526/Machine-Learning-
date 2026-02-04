@@ -1,0 +1,126 @@
+1. Importing required libraries
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.datasets import make_blobs
+from sklearn.cluster import AgglomerativeClustering
+from sklearn.metrics import silhouette_score
+from scipy.cluster.hierarchy import dendrogram, linkage
+
+
+matplotlib.pyplot → used for plotting graphs
+
+numpy → numerical operations
+
+make_blobs → generates synthetic clustered data
+
+AgglomerativeClustering → performs hierarchical clustering
+
+silhouette_score → measures clustering quality
+
+dendrogram, linkage → used to create hierarchical tree structure
+
+2. Generating synthetic dataset
+X, y = make_blobs(
+    n_samples=1000,
+    centers=3,
+    n_features=2,
+    random_state=23
+)
+
+
+Creates 1000 data points
+
+Data has 3 natural clusters
+
+Each point has 2 features
+
+X → feature values
+
+y → true cluster labels (used only for visualization, not training)
+
+3. Scatter plot of original data
+plt.scatter(X[:, 0], X[:, 1], c=y)
+plt.title("Generated Data")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.show()
+
+
+Displays the original data distribution
+
+Colors represent the true clusters
+
+Helps visually understand how data is grouped
+
+4. Creating the dendrogram
+linked = linkage(X, method='ward')
+
+
+linkage() computes distances between clusters
+
+ward method minimizes variance within clusters
+
+This step is used only for visual analysis
+
+plt.figure(figsize=(10, 6))
+dendrogram(linked)
+plt.title("Dendrogram (Hierarchical Clustering)")
+plt.xlabel("Data points")
+plt.ylabel("Distance")
+plt.show()
+
+
+Dendrogram shows how clusters merge step by step
+
+The height of merges represents distance between clusters
+
+Used to decide the optimal number of clusters
+
+5. Applying Agglomerative Clustering
+hc = AgglomerativeClustering(
+    n_clusters=3,
+    linkage='ward'
+)
+
+
+Initializes hierarchical clustering
+
+n_clusters=3 → final number of clusters
+
+ward → best for Euclidean distance
+
+y_hc = hc.fit_predict(X)
+
+
+Fits the model to data
+
+Assigns each data point to a cluster
+
+Output stored in y_hc
+
+6. Calculating Silhouette Score
+score = silhouette_score(X, y_hc)
+print("Silhouette Score (Hierarchical):", score)
+
+
+Measures how well clusters are formed
+
+Range: -1 to +1
+
+Higher value → better clustering
+
+Indicates compact and well-separated clusters
+
+7. Visualizing clustered result
+plt.scatter(X[:, 0], X[:, 1], c=y_hc, cmap='viridis')
+plt.title("Hierarchical Clustering Result")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.show()
+
+
+Shows final clustering output
+
+Points with same color belong to same cluster
+
+Confirms how hierarchical clustering grouped the data
