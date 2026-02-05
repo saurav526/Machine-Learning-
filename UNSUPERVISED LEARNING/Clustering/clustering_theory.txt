@@ -1,0 +1,242 @@
+📌 What is Clustering?
+
+Clustering is an unsupervised machine learning technique that groups data points in such a way that:
+
+Points within the same cluster are similar
+
+Points in different clusters are dissimilar
+
+👉 No labeled output is given in advance.
+
+🔹 Why Clustering is Used
+
+Discover hidden patterns in data
+
+Customer segmentation
+
+Image segmentation
+
+Anomaly / fraud detection
+
+Document & text grouping
+
+Biological data analysis
+
+📌 Core Concepts in Clustering
+1. Similarity / Distance Measure
+
+Defines how close data points are.
+Common measures:
+
+Euclidean distance
+
+Manhattan distance
+
+Cosine similarity
+
+2. Cluster
+
+A group of data points having high similarity among themselves.
+
+3. Intra-cluster Distance
+
+Distance between points inside the same cluster
+👉 Should be minimum
+
+4. Inter-cluster Distance
+
+Distance between different clusters
+👉 Should be maximum
+
+5. Centroid
+
+The center of a cluster (used mainly in K-Means)
+
+6. Noise / Outliers
+
+Data points that do not belong to any cluster
+(Common in DBSCAN)
+
+📌 Types of Clustering Algorithms
+1️⃣ Partition-based Clustering
+
+Divides data into K non-overlapping clusters
+
+🔹 Algorithm: K-Means Clustering
+Concept
+
+Each cluster is represented by a centroid
+
+Data points are assigned to the nearest centroid
+
+Algorithm Steps
+
+Choose number of clusters K
+
+Randomly initialize K centroids
+
+Assign each data point to nearest centroid
+
+Recalculate centroids
+
+Repeat steps 3–4 until centroids stop changing
+
+Advantages
+
+Simple and fast
+
+Works well for large datasets
+
+Disadvantages
+
+Need to specify K
+
+Sensitive to outliers
+
+Only works well with spherical clusters
+
+2️⃣ Hierarchical Clustering
+
+Creates a tree-like structure (dendrogram) of clusters
+
+🔹 Algorithm: Agglomerative Clustering
+Concept
+
+Bottom-up approach
+
+Each data point starts as its own cluster
+
+Algorithm Steps
+
+Treat each data point as a separate cluster
+
+Compute distance between clusters
+
+Merge the two closest clusters
+
+Repeat until only one cluster remains
+
+Cut dendrogram to get desired clusters
+
+Types of Linkage
+
+Single
+
+Complete
+
+Average
+
+Ward (most commonly used)
+
+Advantages
+
+No need to specify number of clusters initially
+
+Produces interpretable dendrogram
+
+Disadvantages
+
+Computationally expensive
+
+Not suitable for very large datasets
+
+3️⃣ Density-based Clustering
+
+Clusters are formed based on dense regions
+
+🔹 Algorithm: DBSCAN
+Concept
+
+Groups points that are closely packed
+
+Marks low-density points as noise
+
+Parameters
+
+eps → neighborhood radius
+
+min_samples → minimum points to form a cluster
+
+Algorithm Steps
+
+Select a point
+
+Find all points within eps
+
+If neighbors ≥ min_samples, form cluster
+
+Expand cluster recursively
+
+Points not assigned → noise
+
+Advantages
+
+No need to specify number of clusters
+
+Detects noise & outliers
+
+Works with arbitrary shaped clusters
+
+Disadvantages
+
+Sensitive to parameter selection
+
+Fails on varying density datasets
+
+4️⃣ Model-based Clustering
+
+Assumes data is generated from a mixture of probability distributions
+
+🔹 Algorithm: Gaussian Mixture Model (GMM)
+Concept
+
+Data points belong to clusters with certain probabilities
+
+Uses Gaussian distributions
+
+Algorithm Steps
+
+Initialize parameters
+
+Expectation step (E-step)
+
+Maximization step (M-step)
+
+Repeat until convergence
+
+Advantages
+
+Soft clustering (probabilistic)
+
+More flexible than K-Means
+
+Disadvantages
+
+Computationally heavy
+
+Sensitive to initialization
+
+📌 Clustering Evaluation Metrics
+1. Silhouette Score
+
+Range: -1 to +1
+
+Higher score → better clusters
+
+2. Davies–Bouldin Index
+
+Lower value → better clustering
+
+3. Calinski–Harabasz Index
+
+Higher value → better separation
+
+📌 Comparison Summary
+Algorithm	Need K	Handles Noise	Shape	Speed
+K-Means	Yes	❌	Spherical	Fast
+Hierarchical	No	❌	Any	Slow
+DBSCAN	No	✅	Arbitrary	Medium
+GMM	Yes	❌	Elliptical	Slow
+📌 Final Summary
+
+Clustering is a powerful unsupervised learning technique used to group similar data points. Different clustering algorithms work on different principles such as distance, hierarchy, and density. Choosing the right clustering algorithm depends on data size, shape, noise, and application requirements.
