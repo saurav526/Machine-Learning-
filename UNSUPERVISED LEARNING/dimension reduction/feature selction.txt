@@ -1,0 +1,146 @@
+🔹 1. FEATURE SELECTION
+📌 What is Feature Selection?
+
+Feature Selection is the process of selecting a subset of the original features from the dataset without creating new features.
+
+➡️ The original meaning of features is preserved.
+
+🔹 Key Idea:
+
+Remove irrelevant, redundant, or noisy features.
+
+🔹 Why Feature Selection?
+
+Reduces overfitting
+
+Improves accuracy
+
+Faster training
+
+Easier interpretation
+
+Lower storage requirement
+
+🔹 Types of Feature Selection
+
+Feature Selection is classified into three main types:
+
+Filter Methods
+
+Wrapper Methods
+
+Embedded Methods
+
+🔹 1️⃣ FILTER METHODS
+📌 Definition:
+
+Filter methods select features based on statistical measures, independent of any ML algorithm.
+
+📌 Characteristics:
+
+Fast
+
+Scalable
+
+Algorithm-independent
+
+Less accurate than wrapper methods
+
+🔹 Common Filter Algorithms
+✅ Variance Threshold
+
+Removes features with low variance
+
+Assumption: low variance → less information
+
+✅ Correlation Coefficient
+
+Removes highly correlated features
+
+Prevents redundancy
+
+✅ Chi-Square Test
+
+Measures dependency between feature and class
+
+Used for categorical data
+
+✅ ANOVA (F-Test)
+
+Measures variance between groups
+
+✅ Mutual Information
+
+Measures shared information between feature and target
+
+📌 Example:
+Remove features whose variance < threshold
+
+🔹 2️⃣ WRAPPER METHODS
+📌 Definition:
+
+Wrapper methods evaluate feature subsets by training a model and selecting the subset with best performance.
+
+📌 Characteristics:
+
+High accuracy
+
+Computationally expensive
+
+Risk of overfitting
+
+🔹 Common Wrapper Algorithms
+✅ Forward Selection
+
+Start with zero features
+
+Add one feature at a time
+
+✅ Backward Elimination
+
+Start with all features
+
+Remove one feature at a time
+
+✅ Recursive Feature Elimination (RFE)
+
+Repeatedly removes least important features
+
+📌 Example:
+Train model → Evaluate accuracy → Select best subset
+
+🔹 3️⃣ EMBEDDED METHODS
+📌 Definition:
+
+Embedded methods perform feature selection during model training.
+
+📌 Characteristics:
+
+Balanced performance
+
+Less expensive than wrappers
+
+Model-specific
+
+🔹 Common Embedded Algorithms
+✅ Lasso Regression (L1 Regularization)
+
+Shrinks some coefficients to zero
+
+Performs automatic feature selection
+
+✅ Ridge Regression (L2)
+
+Reduces feature impact but doesn’t remove them
+
+✅ Elastic Net
+
+Combination of L1 and L2
+
+✅ Tree-Based Methods
+
+Decision Tree
+
+Random Forest
+
+Feature importance based
