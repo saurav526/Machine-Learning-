@@ -1,0 +1,18 @@
+Feature Extraction
+│
+├── Linear Methods
+│     ├── PCA
+│     ├── LDA
+│     └── ICA
+│
+├── Non-Linear Methods
+│     ├── t-SNE
+│     ├── Isomap
+│     ├── LLE
+│     └── Kernel PCA
+│
+├── Deep Learning Based
+│     └── Autoencoder
+│
+└── Randomized Methods
+      └── Random Projection
