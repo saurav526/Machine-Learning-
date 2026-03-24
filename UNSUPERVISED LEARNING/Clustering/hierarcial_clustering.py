@@ -40,7 +40,6 @@ sil_score = silhouette_score(X_train, y_pred)
 print("Silhouette Score for Agglomerative Clustering:", sil_score)
 
 
-# Visualize the clusters
 plt.scatter(X_train[:, 0], X_train[:, 1], c=y_pred) 
 plt.title("Agglomerative Clustering Results")
 plt.xlabel("Feature 1") 
