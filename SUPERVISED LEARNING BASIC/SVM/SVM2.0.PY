@@ -36,36 +36,16 @@ X_test = scaler.transform(X_test)
 
 print("\nFeature scaling completed.")
 
-
-# ============================================================
-# 6. Create KNN Model
-# ============================================================
-
 knn = KNeighborsClassifier(n_neighbors=5,metric="euclidean")
-
-
-# ============================================================
-# 7. Train Model
-# ============================================================
 
 knn.fit(X_train, y_train)
 
 print("\nKNN Model trained successfully.")
 
-
-# ============================================================
-# 8. Make Predictions
-# ============================================================
-
 y_pred = knn.predict(X_test)
 
 print("\nPredictions:")
 print(y_pred)
-
-
-# ============================================================
-# 9. Model Evaluation
-# ============================================================
 
 accuracy = accuracy_score(y_test, y_pred)
 
