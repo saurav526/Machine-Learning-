@@ -9,10 +9,6 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import (accuracy_score,precision_score,recall_score,f1_score,confusion_matrix,classification_report)
 
 
-# ============================================================
-# 2. Load Dataset
-# ============================================================
-
 data = load_breast_cancer()
 
 X = pd.DataFrame(data.data, columns=data.feature_names)
@@ -25,27 +21,12 @@ print(X.shape)
 print("\nFirst 5 Rows:")
 print(X.head())
 
-
-# ============================================================
-# 3. Check Missing Values
-# ============================================================
-
 print("\nMissing Values:")
 print(X.isnull().sum().sum())
-
-
-# ============================================================
-# 4. Split Data into Training and Testing
-# ============================================================
 
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.20,random_state=42,stratify=y)
 print("\nTraining Data:", X_train.shape)
 print("Testing Data:", X_test.shape)
-
-
-# ============================================================
-# 5. Feature Scaling
-# ============================================================
 
 scaler = StandardScaler()
 
