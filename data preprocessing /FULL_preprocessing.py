@@ -21,10 +21,6 @@ from sklearn.feature_extraction.text import (
 )
 from sklearn.metrics import pairwise_distances
 
-# Optional image preprocessing imports:
-# import cv2
-# from PIL import Image
-
 # ------------------------------------------------------------
 # 0. DEMO DATA
 # ------------------------------------------------------------
