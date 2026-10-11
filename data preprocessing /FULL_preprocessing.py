@@ -1,7 +1,4 @@
 # ============================================================
-# COMPLETE DATA PREPROCESSING TECHNIQUES IN PYTHON
-# Each technique has a one-line explanation.
-# Install: pip install pandas numpy scikit-learn scipy matplotlib seaborn nltk opencv-python pillow
 # ============================================================
 
 import re
