@@ -1,20 +1,12 @@
-# ============================================================
 import re
 import numpy as np
 import pandas as pd
 from scipy import stats
 
 from sklearn.impute import SimpleImputer, KNNImputer
-from sklearn.preprocessing import (
-    StandardScaler, MinMaxScaler, RobustScaler, MaxAbsScaler,
-    Normalizer, Binarizer, LabelEncoder, OrdinalEncoder,
-    OneHotEncoder, PolynomialFeatures, PowerTransformer,
-    QuantileTransformer
+from sklearn.preprocessing import (StandardScaler, MinMaxScaler, RobustScaler, MaxAbsScaler, Normalizer, Binarizer, LabelEncoder, OrdinalEncoder,  OneHotEncoder, PolynomialFeatures, PowerTransformer, QuantileTransformer
 )
-from sklearn.model_selection import (
-    train_test_split, cross_val_score, KFold, StratifiedKFold,
-    TimeSeriesSplit
-)
+from sklearn.model_selection import ( train_test_split, cross_val_score, KFold, StratifiedKFold,TimeSeriesSplit)
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.feature_selection import (
