@@ -3,13 +3,9 @@
 This repository contains implementations of fundamental and advanced Machine Learning algorithms including:
 
 Supervised Learning
-
 Unsupervised Learning
-
 Dimensionality Reduction
-
 Feature Selection
-
 Model Evaluation
 
 The goal of this repository is to understand both theory and implementation of ML algorithms using Python.
