@@ -2,78 +2,48 @@
 
 This repository contains implementations of fundamental and advanced Machine Learning algorithms including:
 
-Supervised Learning
+**Supervised Learning 
 Unsupervised Learning
 Dimensionality Reduction
 Feature Selection
-Model Evaluation
+Model Evaluation**
 
 The goal of this repository is to understand both theory and implementation of ML algorithms using Python.
 
-🧠 Topics Covered
-🔹 Supervised Learning
-
 Linear Regression
-
 Logistic Regression
-
 K-Nearest Neighbors (KNN)
-
 Support Vector Machine (SVM)
-
 Decision Tree
-
 Random Forest
-
 Naive Bayes
 
 🔹 Unsupervised Learning
-
 K-Means Clustering
-
 Hierarchical Clustering
-
 DBSCAN
 
 🔹 Dimensionality Reduction
 Feature Extraction
-
 PCA (Principal Component Analysis)
-
 LDA (Linear Discriminant Analysis)
-
 ICA (Independent Component Analysis)
-
 t-SNE
-
 Isomap
-
 LLE
-
 Autoencoders
-
-Feature Selection
-
 Filter Methods (Chi-Square, Correlation, ANOVA)
-
 Wrapper Methods (Forward Selection, RFE)
-
 Embedded Methods (Lasso, Ridge)
 
 🔹 Model Evaluation
 
 Accuracy
-
 Precision
-
 Recall
-
 F1-Score
-
 Confusion Matrix
-
 ROC Curve
-
 Cross Validation
 
 🛠️ Tech Stack
